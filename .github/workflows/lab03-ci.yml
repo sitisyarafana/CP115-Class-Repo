@@ -20,6 +20,15 @@ jobs:
       - name: Verify lab-03-3.frpg exists
         run: test -f labs/lab03/lab-03-3.frpg
 
+      - name: Verify lab-03-4.frpg exists
+        run: test -f labs/lab03/lab-03-4.frpg
+
+      - name: Verify lab-03-5.frpg exists
+        run: test -f labs/lab03/lab-03-5.frpg
+
+      - name: Verify lab-03-6.frpg exists
+        run: test -f labs/lab03/lab-03-6.frpg
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
