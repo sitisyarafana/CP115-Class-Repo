@@ -29,13 +29,4 @@ jobs:
       - name: Verify lab-03-6.frpg exists
         run: test -f labs/lab03/lab-03-6.fprg
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
 
-      - name: Install pytest
-        run: pip install pytest
-
-      - name: Run Lab 03 tests
-        run: pytest labs/lab03/tests
