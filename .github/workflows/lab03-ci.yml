@@ -1,0 +1,41 @@
+name: Lab 03 Tests
+
+on:
+  push:
+    paths:
+      - 'labs/lab03/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Verify lab-03-1.frpg exists
+        run: test -f labs/lab03/lab-03-1.frpg
+
+      - name: Verify lab-03-2.frpg exists
+        run: test -f labs/lab03/lab-03-2.frpg
+
+      - name: Verify lab-03-3.frpg exists
+        run: test -f labs/lab03/lab-03-3.frpg
+
+      - name: Verify lab-03-4.frpg exists
+        run: test -f labs/lab03/lab-03-4.frpg
+
+      - name: Verify lab-03-5.frpg exists
+        run: test -f labs/lab03/lab-03-5.frpg
+
+      - name: Verify lab-03-6.frpg exists
+        run: test -f labs/lab03/lab-03-6.frpg
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run Lab 03 tests
+        run: pytest labs/lab03/tests
