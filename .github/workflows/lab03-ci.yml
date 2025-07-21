@@ -12,22 +12,22 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Verify lab-03-1.frpg exists
-        run: test -f labs/lab03/lab-03-1.frpg
+        run: test -f labs/lab03/lab-03-1.fprg
 
       - name: Verify lab-03-2.frpg exists
-        run: test -f labs/lab03/lab-03-2.frpg
+        run: test -f labs/lab03/lab-03-2.fprg
 
       - name: Verify lab-03-3.frpg exists
-        run: test -f labs/lab03/lab-03-3.frpg
+        run: test -f labs/lab03/lab-03-3.fprg
 
       - name: Verify lab-03-4.frpg exists
-        run: test -f labs/lab03/lab-03-4.frpg
+        run: test -f labs/lab03/lab-03-4.fprg
 
       - name: Verify lab-03-5.frpg exists
-        run: test -f labs/lab03/lab-03-5.frpg
+        run: test -f labs/lab03/lab-03-5.fprg
 
       - name: Verify lab-03-6.frpg exists
-        run: test -f labs/lab03/lab-03-6.frpg
+        run: test -f labs/lab03/lab-03-6.fprg
 
       - name: Set up Python
         uses: actions/setup-python@v4
