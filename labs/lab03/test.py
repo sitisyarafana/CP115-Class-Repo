@@ -12,7 +12,6 @@ def extract_numbers(text):
     return [float(n) for n in nums]
 
 def run_test(script, input_data, expected):
-    """Run a single test case on the given script."""
     proc = subprocess.run(
         [sys.executable, script],
         input=input_data,
@@ -71,9 +70,18 @@ def main():
         ("lab_03_6.py", "10 10 4 4\n", [168.00]),
         ("lab_03_6.py", "5 5 2 2\n",   [42.00]),
         ("lab_03_6.py", "20 15 5 5\n", [550.00]),
+
+        # Scenario 6: Temperature Conversion
+        ("lab_03_7.py", "0\n",        [32.0, 273.15]),
+        ("lab_03_7.py", "100\n",      [212.0, 373.15]),
+        ("lab_03_7.py", "-273.15\n",  [-459.67, 0.0]),
+
+        # Scenario 7: Simple Interest + Monthly
+        ("lab_03_8.py", "1000\n5\n2\n", [100.0, 1100.0, 100.0 / 24]),
+        ("lab_03_8.py", "500\n3\n1\n",   [15.0, 515.0, 15.0 / 12]),
+        ("lab_03_8.py", "200\n0\n5\n",   [0.0, 200.0, 0.0]),
     ]
 
-    # Filter tests to a single script if requested
     if args.script:
         tests = [t for t in tests if t[0] == args.script]
 
