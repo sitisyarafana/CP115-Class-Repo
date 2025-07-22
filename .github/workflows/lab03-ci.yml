@@ -8,6 +8,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: labs/lab03
+
     steps:
       - uses: actions/checkout@v3
 
@@ -16,15 +20,32 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run Lab03 Python tests
-        run: python labs/lab03/test.py
+      - name: Verify lab-03-2.fprg exists
+        run: test -f lab-03-2.fprg
 
-      - name: Verify Flowgorithm files exist
-        run: |
-          for i in {1..6}; do
-            file="labs/lab03/lab-03-${i}.fprg"
-            if [ ! -f "$file" ]; then
-              echo "❌ Missing $file"
-              exit 1
-            fi
-          done
+      - name: Test Scenario 1 (lab_03_2.py)
+        run: python test_lab03.py --script lab_03_2.py
+
+      - name: Verify lab-03-3.fprg exists
+        run: test -f lab-03-3.fprg
+
+      - name: Test Scenario 2 (lab_03_3.py)
+        run: python test_lab03.py --script lab_03_3.py
+
+      - name: Verify lab-03-4.fprg exists
+        run: test -f lab-03-4.fprg
+
+      - name: Test Scenario 3 (lab_03_4.py)
+        run: python test_lab03.py --script lab_03_4.py
+
+      - name: Verify lab-03-5.fprg exists
+        run: test -f lab-03-5.fprg
+
+      - name: Test Scenario 4 (lab_03_5.py)
+        run: python test_lab03.py --script lab_03_5.py
+
+      - name: Verify lab-03-6.fprg exists
+        run: test -f lab-03-6.fprg
+
+      - name: Test Scenario 5 (lab_03_6.py)
+        run: python test_lab03.py --script lab_03_6.py
