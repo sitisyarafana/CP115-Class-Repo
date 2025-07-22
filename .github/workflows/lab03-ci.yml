@@ -11,22 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Verify lab-03-1.frpg exists
-        run: test -f labs/lab03/lab-03-1.fprg
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-      - name: Verify lab-03-2.frpg exists
-        run: test -f labs/lab03/lab-03-2.fprg
+      - name: Run Lab03 Python tests
+        run: python labs/lab03/test.py
 
-      - name: Verify lab-03-3.frpg exists
-        run: test -f labs/lab03/lab-03-3.fprg
-
-      - name: Verify lab-03-4.frpg exists
-        run: test -f labs/lab03/lab-03-4.fprg
-
-      - name: Verify lab-03-5.frpg exists
-        run: test -f labs/lab03/lab-03-5.fprg
-
-      - name: Verify lab-03-6.frpg exists
-        run: test -f labs/lab03/lab-03-6.fprg
-
-
+      - name: Verify Flowgorithm files exist
+        run: |
+          for i in {1..6}; do
+            file="labs/lab03/lab-03-${i}.fprg"
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing $file"
+              exit 1
+            fi
+          done
