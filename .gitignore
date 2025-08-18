@@ -64,3 +64,9 @@ Desktop.ini
 # Claude Code files
 CLAUDE.md
 .claude*
+
+# Python Virtual Environments
+cp115_env/
+venv/
+env/
+.env/
