@@ -1,6 +1,6 @@
 # Getting user input (always returns a string)
 student_name = input("Enter your name: ")
-age = str(input("Enter your age: "))
+age = int(input("Enter your age: "))
 course_code = input("Enter the course name: ")
 
 # Formatted output using string concatenation

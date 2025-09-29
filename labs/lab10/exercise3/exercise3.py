@@ -2,7 +2,7 @@ monthly_income = int(input())
 credit_score = int(input())
 loan_amount = int(input())
 
-# Determine max loan amount (5x income)
+# Determine max loan amount
 max_loan_amount = monthly_income * 5
 
 # Determine interest rate based on credit score
