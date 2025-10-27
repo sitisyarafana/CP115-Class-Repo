@@ -23,6 +23,7 @@ else:
 
 
 
+    
 print(base_premium)
 print(final_premium)
 print(discount_amount)
